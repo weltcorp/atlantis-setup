@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  atlantis:
+    image: ghcr.io/runatlantis/atlantis:v0.28.1
+    container_name: atlantis
+    ports:
+      - "80:4141"
+    environment:
+      ATLANTIS_REPO_CONFIG: /etc/atlantis/repos.yaml
+      ATLANTIS_CONFIG: /etc/atlantis/config.yaml
+      GOOGLE_APPLICATION_CREDENTIALS: /etc/atlantis/credentials.json
+    volumes:
+      - /etc/gcs/repos.yaml:/etc/atlantis/repos.yaml
+      - /etc/gcs/config.yaml:/etc/atlantis/config.yaml
+      - /etc/gcs/key.json:/etc/atlantis/credentials.json
+      - /var/lib/atlantis:/var/lib/atlantis
+
+volumes:
+  atlantis-data:
