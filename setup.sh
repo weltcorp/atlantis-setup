@@ -38,3 +38,5 @@ echo "${TAC_SHA256_SUM}  terragrunt-atlantis-config_${TAC_VERSION}_linux_amd64.t
 tar xf "terragrunt-atlantis-config_${TAC_VERSION}_linux_amd64.tar.gz"
 cp -fv "terragrunt-atlantis-config_${TAC_VERSION}_linux_amd64/terragrunt-atlantis-config_${TAC_VERSION}_linux_amd64" "${TAC_FILE}"
 chmod 755 "${TG_FILE}"
+
+docker compose up -d
