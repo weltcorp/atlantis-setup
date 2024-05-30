@@ -11,9 +11,7 @@ services:
       ATLANTIS_CONFIG: /etc/atlantis/config.yaml
       GOOGLE_APPLICATION_CREDENTIALS: /etc/atlantis/credentials.json
     volumes:
-      - /etc/gcs/repos.yaml:/etc/atlantis/repos.yaml
-      - /etc/gcs/config.yaml:/etc/atlantis/config.yaml
-      - /etc/gcs/key.json:/etc/atlantis/credentials.json
+      - /etc/gcs:/etc/atlantis
       - /usr/local/sbin:/usr/local/sbin
       - /var/lib/atlantis:/var/lib/atlantis
 
