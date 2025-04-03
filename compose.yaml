@@ -14,6 +14,6 @@ services:
       - /etc/gcs:/etc/atlantis
       - /usr/local/sbin:/usr/local/sbin
       - /var/lib/atlantis:/var/lib/atlantis
-
-volumes:
-  atlantis-data:
+    command:
+      - server
+      - --repo-config=/etc/atlantis/repos.yaml
